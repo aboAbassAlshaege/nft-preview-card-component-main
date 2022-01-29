@@ -20,6 +20,7 @@ span {
 }
 .card {
   width: 370px;
+  max-width: 100%;
   position: absolute;
   left: 50%;
   top: 50%;
@@ -32,19 +33,20 @@ span {
     &::before {
       content: '';
       position: absolute;
-      left: 0;
-      top: 0;
-      width: 100%;
-      height: 100%;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%,-50%);
+      width: 0;
+      height: 0;
       background-color: cyan;
       opacity: .7;
       border-radius: 10px;
-      display: none;
-      transition: .3s;
+      transition: .1s;
       cursor: pointer;
     }
     &:hover::before {
-      display: block;
+      width: 100%;
+      height: 100%;
     }
     > img:first-of-type {
       max-width: 100%;
@@ -62,8 +64,9 @@ span {
     }
   }
   .text {
-    h2 {
+    h1 {
       color: white;
+      font-size: 25px;
       font-weight: 600;
       margin: 15px 0;
       cursor: pointer;
@@ -126,6 +129,10 @@ span {
   }
   @media (max-width:767px) {
     width: 320px;
+    padding: 15px;
+  }
+  @media (max-width:290px) {
+    width: 250px;
     padding: 15px;
   }
 }
